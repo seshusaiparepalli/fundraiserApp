@@ -23,9 +23,12 @@ public class Campaigns {
     @JoinColumn(name = "CreatedBy")
     private User CreatedBy;
 
-    // campaign beneficiaries relation
-//    @OneToMany(mappedBy = "campaignId", cascade = CascadeType.ALL)
-//    private List<CampaignBeneficiaries> campaignBeneficiaries;
+    // campaign to beneficiaries relation
+    @OneToMany(mappedBy = "campaignId", cascade = CascadeType.ALL)
+    private List<CampaignBeneficiaries> campaignBeneficiaries;
+
+    // From campaign themes table to campaign
+
 
     public Campaigns() {
     }
